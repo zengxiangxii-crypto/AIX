@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio | Your Name</title>
+    <!-- 引入高级感字体：使用 Instrument Serif (类似Van Schneider的风格) -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --secondary: #888888;
+            --accent: #0044ff; /* 链接色 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 布局容器 */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+        /* 导航栏 */
+        nav {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+        }
+        nav a { text-decoration: none; color: var(--text); margin-left: 30px; }
+        .logo { font-size: 18px; margin-left: 0; }
+
+        /* 英雄展区 - 核心致敬点 */
+        header { padding: 100px 0 150px 0; }
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 10vw, 7.5rem); /* 响应式巨型文字 */
+            line-height: 0.9;
+            font-weight: 400;
+            letter-spacing: -0.04em;
+            margin-bottom: 40px;
+        }
+        .hero-sub {
+            font-size: 24px;
+            max-width: 600px;
+            color: var(--secondary);
+            margin-left: 5px;
+        }
+
+        /* 作品网格 */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+            gap: 80px 40px;
+        }
+        .project { text-decoration: none; color: inherit; display: block; }
+        .img-container {
+            background: #f2f2f2;
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            margin-bottom: 24px;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project:hover .img-container { transform: scale(0.98); }
+        .img-container img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(100%); /* 默认黑白，致敬感 */
+            transition: filter 0.5s ease;
+        }
+        .project:hover img { filter: grayscale(0%); }
+        
+        .project-meta { display: flex; justify-content: space-between; align-items: flex-start; }
+        .project-title { font-size: 24px; font-family: 'Instrument Serif', serif; }
+        .project-category { font-size: 14px; color: var(--secondary); text-transform: uppercase; margin-top: 5px; }
+
+        /* 页脚 */
+        footer { padding: 150px 0 80px 0; border-top: 1px solid #eee; margin-top: 150px; }
+        .footer-wrap { display: flex; justify-content: space-between; align-items: flex-end; }
+        .contact-link {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            text-decoration: none;
+            color: var(--text);
+            border-bottom: 2px solid var(--text);
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 850px) {
+            .work-grid { grid-template-columns: 1fr; gap: 60px; }
+            .container { padding: 0 24px; }
+            h1 { margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="/" class="logo">YOUR NAME</a>
+            <div class="nav-links">
+                <a href="#work">WORK</a>
+                <a href="#about">ABOUT</a>
+                <a href="mailto:hello@yoursite.com">CONTACT</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Independent<br>Designer &<br>Art Director.</h1>
+            <p class="hero-sub">帮助有野心的品牌在数字世界建立独特的影响力。专注于简约、美学与功能的极致统一。</p>
+        </header>
+
+        <main id="work" class="work-grid">
+            <!-- 项目 1 -->
+            <a href="#" class="project">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1000" alt="Project 1">
+                </div>
+                <div class="project-meta">
+                    <div>
+                        <div class="project-title">Project Alpha</div>
+                        <div class="project-category">Brand Identity / Web Design</div>
+                    </div>
+                    <div style="font-size: 14px;">2024</div>
+                </div>
+            </a>
+
+            <!-- 项目 2 -->
+            <a href="#" class="project">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1634942559132-a45914aa6bb1?auto=format&fit=crop&q=80&w=1000" alt="Project 2">
+                </div>
+                <div class="project-meta">
+                    <div>
+                        <div class="project-title">Project Beta</div>
+                        <div class="project-category">UI/UX Design</div>
+                    </div>
+                    <div style="font-size: 14px;">2023</div>
+                </div>
+            </a>
+        </main>
+
+        <footer>
+            <div class="footer-wrap">
+                <div>
+                    <p style="margin-bottom: 20px; color: var(--secondary);">LET'S WORK TOGETHER</p>
+                    <a href="mailto:hello@yoursite.com" class="contact-link">hello@yoursite.com</a>
+                </div>
+                <div style="text-align: right; color: var(--secondary); font-size: 14px;">
+                    <p>Instagram</p>
+                    <p>Dribbble</p>
+                    <p>© 2024 LOCAL TIME 14:20</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
